@@ -1,3 +1,4 @@
+#Писарев Максим ИТ-СИП-25-ПР
 import random
 
 def start():
@@ -15,5 +16,6 @@ def start():
             print(f"Бабушка: НЕТ, НИ РАЗУ С {random.randint(1930, 1980)} ГОДА!")
         else:
             print("Бабушка: АСЬ?! ГОВОРИ ГРОМЧЕ, ВНУЧЕК")
+
 
 start()
