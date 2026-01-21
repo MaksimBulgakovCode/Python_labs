@@ -46,9 +46,6 @@ def start():
         
         if action == "exit":
             break
-
-        if dragon_hp or player_hp <= 0:
-            restart()
         
         dragon_damage = random.randint(0, 30)
         player_hp = player_hp - dragon_damage
@@ -56,6 +53,9 @@ def start():
             print(f"The dragon attacked you and dealt {dragon_damage} damage")
         elif language == "ru":
             print(f"Дракон атаковал тебя, и нанёс {dragon_damage} урона")
+
+        if dragon_hp <= 0 or player_hp <= 0:
+            restart()
 
         
 def restart():
@@ -78,7 +78,7 @@ def restart():
             player_hp = random.randint(40, 100)
             start()
         else:
-            start_stop == False
+            start_stop = False
 
 start()
 
