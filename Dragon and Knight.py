@@ -1,8 +1,9 @@
 import random
 
-start_stop = True
-dragon_hp = 200
 player_hp = random.randint(40, 100)
+dragon_hp = 200
+
+start_stop = True
 language = input("ru/eng \n")
 
 if language == "eng":
@@ -19,7 +20,7 @@ if language == "eng":
 elif language == "ru":
     text = {
         'main' : f'Тебе нужно победить дракона, у него {dragon_hp} HP',
-        'action' : f'У тебя {player_hp} HP \nУ дракона {dragon_hp} HP \nТы можешь атаковать или лечиться (a/h) \n',
+        'action' : f'Игрок: {player_hp} HP | Дракон: {dragon_hp} HP \nТы можешь атаковать или лечиться (a/h) \n',
         'player_damage' : f'Ты нанёс {player_damage} урона дракону',
         'over100hp' : 'У тебя не может быть больше 100 HP',
         'heal' : f'Ты восстановил {heal} HP',
@@ -29,14 +30,10 @@ elif language == "ru":
     }
 
 def start():
-    global dragon_hp, player_hp, language
-    print(text['main'])
     
+    print(text['main'])
     while start_stop:
-        if language == "eng":
-            action = input(f"You have {player_hp} HP \nDragon has {dragon_hp} HP \nYou can attack or heal (a/h) \n")
-        elif language == "ru":
-            action = input(f"У тебя {player_hp} HP \nУ дракона {dragon_hp} HP \nТы можешь атаковать или лечиться (a/h) \n")
+        action = input(text['action'])
         print("=" * 20)
         
         if action == "a":
@@ -49,7 +46,7 @@ def start():
         
         elif action == "h":
             heal = random.randint(5, 30)
-            if player_hp + heal > 100:
+            if player_hp + heal == 100:
                 player_hp = 100
                 if language == "eng":
                     print("You can't have over 100 HP")
@@ -81,6 +78,7 @@ def restart():
     if dragon_hp < 0:
         if language == "eng":
             print("You win! Thank you for playing!")
+            start_stop = False
         elif language == "ru":
             print("Ты победил! Спасибо за игру!")
             start_stop = False
