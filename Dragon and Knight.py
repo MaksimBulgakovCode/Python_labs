@@ -2,7 +2,6 @@ import random
 
 start_stop = True
 dragon_hp = 200
-dragon_mana = 300
 language = input("ru/eng \n")
 
 player_hp = random.randint(40, 100)
