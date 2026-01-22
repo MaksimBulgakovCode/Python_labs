@@ -4,6 +4,28 @@ start_stop = True
 dragon_hp = 200
 language = input("ru/eng \n")
 
+if language == "eng":
+    text = {
+        'main' : 'f"You need to defeat the dragon, he has {dragon_hp} HP"',
+        'action' : 'f"You have {player_hp} HP \nDragon has {dragon_hp} HP \nYou can attack or heal (a/h) \n"',
+        'player_damage' : 'f"You dealt {player_damage} damage to the dragon"',
+        'over100hp' : '"You can not have over 100 HP"',
+        'heal' : 'f"You have restored {heal} HP"',
+        'dragon_damage' : 'f"The dragon attacked you and dealt {dragon_damage} damage"',
+        'win' : '"You win! Thank you for playing!"',
+        'defeat' : '"Are you defeat :( \nRestart? (r))"',
+        }
+elif language == "ru":
+    text = {
+        'main' : 'f"Тебе нужно победить дракона, у него {dragon_hp} HP"',
+        'action' : 'f"У тебя {player_hp} HP \nУ дракона {dragon_hp} HP \nТы можешь атаковать или лечиться (a/h) \n"',
+        'player_damage' : 'f"Ты нанёс {player_damage} урона дракону"',
+        'over100hp' : '"У тебя не может быть больше 100 HP"',
+        'heal' : 'f"Ты восстановил {heal} HP"',
+        'dragon_damage' : 'f"Дракон атаковал тебя, и нанёс {dragon_damage} урона"',
+        'win' : '"Ты победил! Спасибо за игру!"',
+        'defeat' : '"Ты проиграл :( \nЗаново? (r))"',
+    }
 player_hp = random.randint(40, 100)
 
 def start():
