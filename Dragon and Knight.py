@@ -40,7 +40,8 @@ def start():
             damage = random.randint(0, 25)
             dragon_hp -= damage
             print(text['player_damage'].format(dmg = damage))
-            if dragon_hp <= 0:
+        
+        if dragon_hp <= 0:
                 print(text['win'])
                 break
         
