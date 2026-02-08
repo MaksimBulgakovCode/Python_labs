@@ -9,30 +9,12 @@ def word():
     return correctword
 
 def hangman():
-    if count == 0:
-        with open('stage0.txt', 'r') as file:
-            print(file.read())
-    elif count == 1:
-        with open('stage1.txt', 'r') as file:
-            print(file.read())
-    elif count == 2:
-        with open('stage2.txt', 'r') as file:
-            print(file.read())
-    elif count == 3:
-        with open('stage3.txt', 'r') as file:
-            print(file.read())
-    elif count == 4:
-        with open('stage4.txt', 'r') as file:
-            print(file.read())
-    elif count == 5:
-        with open('stage5.txt', 'r') as file:
-            print(file.read())
-    elif count == 6:
-        with open('stage6.txt', 'r') as file:
-            print(file.read())
-    elif count == 7:
-        with open('stage7.txt', 'r', encoding='utf-8') as file:
-            print(file.read())
+    stage = list("stage0.txt")
+    stage[5] = str(count)
+    stage = "".join(stage)
+
+    with open(stage, 'r', encoding='utf-8') as file:
+        print(file.read())
 
 def start():
     
