@@ -17,6 +17,7 @@ def start():
             'dragon_damage': 'The dragon attacked you and dealt {dmg} damage',
             'win': 'You win! Thank you for playing!',
             'defeat': 'Are you defeat :( \nRestart? (r)',
+            'wait': 'The dragon is waiting for you to think about your actions'
             }
         
     elif language == "ru":
@@ -29,6 +30,7 @@ def start():
             'dragon_damage': 'Дракон атаковал тебя, и нанёс {dmg} урона',
             'win': 'Ты победил! Спасибо за игру!',
             'defeat': 'Ты проиграл :( \nЗаново? (r)',
+            'wait': 'Дракон ждёт пока ты обдумаешь свои действия'
     }
     
     print(text['main'].format(dragonHP = dragon_hp))
@@ -56,6 +58,10 @@ def start():
         
         elif action == "exit":
             break
+        
+        else:
+            print(text['wait'])
+            continue
         
         damage = random.randint(0, 30)
         player_hp -= damage
